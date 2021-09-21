@@ -1,0 +1,105 @@
+.PhotoLayout {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  row-gap: 200px;
+  margin-bottom: 280px;
+}
+
+.image1 {
+  background-color: red;
+  grid-column: 4/22;
+  height: 500px;
+}
+
+.image2 {
+  background-color: red;
+  grid-column: 3/19;
+  height: 500px;
+}
+
+.image3 {
+  background-color: red;
+  grid-column: 5/23;
+  height: 500px;
+}
+
+.image4 {
+  background-color: red;
+  grid-column: 3/18;
+  height: 500px;
+}
+
+.image5 {
+  background-color: red;
+  grid-column: 6/21;
+  height: 500px;
+}
+
+.image6 {
+  background-color: red;
+  grid-column: 1/-1;
+  height: 500px;
+}
+
+.image7 {
+  background-color: red;
+  grid-column: 7/23;
+  height: 500px;
+}
+
+.image8 {
+  background-color: red;
+  grid-column: 3/18;
+  height: 500px;
+}
+
+.image9 {
+  background-color: red;
+  grid-column: 4/22;
+  height: 500px;
+}
+
+.image10 {
+  background-color: red;
+  grid-column: 7/23;
+  height: 500px;
+}
+
+.image11 {
+  background-color: red;
+  grid-column: 3/18;
+  height: 500px;
+}
+
+.image12 {
+  background-color: red;
+  grid-column: 8/23;
+  height: 500px;
+}
+
+@media screen and (max-width: 960px) {
+  .PhotoLayout {
+    row-gap: 160px;
+    margin-bottom: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .PhotoLayout {
+    row-gap: 120px;
+    margin-bottom: 180px;
+  }
+  .image {
+    grid-column: 3/23;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .PhotoLayout {
+    row-gap: 80px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,84 @@
+.Navbar {
+  width: 100%;
+  margin: 20px auto 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 4/22;
+}
+
+.NavbarTitle {
+  font-family: "Lora", serif;
+  color: #222222;
+  line-height: 110%;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.NavbarIconsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavbarIconsContainer .NavbarIcon:not(:last-child) {
+  margin-right: 20px;
+}
+
+.NavbarIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavbarIconInstagram {
+  width: 32px;
+  height: 32px;
+}
+
+.NavbarIconBehance {
+  width: 36px;
+  height: 36px;
+}
+
+@media screen and (max-width: 960px) {
+  .Navbar {
+    grid-column: 3/23;
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Navbar {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .NavbarTitle {
+    font-size: 20px;
+  }
+  .NavbarIconsContainer .NavbarIcon:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .NavbarIconInstagram svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .NavbarIconBehance svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .NavbarIconInstagram {
+    width: 27px;
+    height: 27px;
+  }
+
+  .NavbarIconBehance {
+    width: 30px;
+    height: 30px;
+  }
+}
