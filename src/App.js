@@ -26,21 +26,16 @@ function App() {
       }px`;
   }, [size.height]);
 
-  useEffect(() => {
-    console.log("raf!");
-    requestAnimationFrame(() => smoothScrolling());
-  }, []);
-
   const smoothScrolling = () => {
     scrollConfigs.current = window.scrollY;
     scrollConfigs.previous +=
       (scrollConfigs.current - scrollConfigs.previous) * scrollConfigs.ease;
     scrollConfigs.rounded = Math.round(scrollConfigs.previous * 100) / 100;
 
-    const difference = scrollConfigs.current - scrollConfigs.rounded;
-    const acceleration = difference / size.width;
-    const velocity = +acceleration;
-    const scale = velocity * 7.5;
+    // const difference = scrollConfigs.current - scrollConfigs.rounded;
+    // const acceleration = difference / size.width;
+    // const velocity = +acceleration;
+    // const scale = velocity * 7.5;
 
     scrollContainer.current.style.transform = `translate3d(0,-${scrollConfigs.rounded}px,0) 
     `;
@@ -48,6 +43,11 @@ function App() {
 
     requestAnimationFrame(() => smoothScrolling());
   };
+
+  useEffect(() => {
+    // console.log("raf!");
+    requestAnimationFrame(() => smoothScrolling());
+  });
 
   return (
     <div ref={app} className="App">
