@@ -33,6 +33,7 @@ function App() {
       }px`;
     }, 200);
     setDebounceTimer(timerId);
+    // eslint-disable-next-line
   }, [size.height, size.width]);
 
   const smoothScrolling = () => {
@@ -56,6 +57,7 @@ function App() {
   useEffect(() => {
     // console.log("raf!");
     requestAnimationFrame(() => smoothScrolling());
+    // eslint-disable-next-line
   }, []);
 
   return (
