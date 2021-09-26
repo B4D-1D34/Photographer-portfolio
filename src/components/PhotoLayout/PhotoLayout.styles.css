@@ -17,7 +17,7 @@
 .image img {
   width: 100%;
   display: block;
-  transition: all 3.5s;
+  transition: all 0.7s ease-out;
 }
 
 .image1 {

@@ -5,6 +5,7 @@ import PhotoLayout from "./components/PhotoLayout/PhotoLayout.component";
 import Footer from "./components/Footer/Footer.component";
 
 import useWindowSize from "./hooks/useWindowSize";
+import OnImagesLoaded from "react-on-images-loaded";
 
 function App() {
   const [debounceTimer, setDebounceTimer] = useState();
@@ -20,6 +21,12 @@ function App() {
     rounded: 0,
   };
 
+  const resizeWindow = () => {
+    document.body.style.height = `${
+      scrollContainer.current.getBoundingClientRect().height
+    }px`;
+  };
+
   useEffect(() => {
     if (debounceTimer) {
       clearTimeout(debounceTimer);
@@ -27,11 +34,9 @@ function App() {
     const timerId = setTimeout(() => {
       // console.log(scrollContainer.current.getBoundingClientRect().height);
 
-      // console.log("resize");
-      document.body.style.height = `${
-        scrollContainer.current.getBoundingClientRect().height
-      }px`;
-    }, 200);
+      // console.log("init height");
+      resizeWindow();
+    }, 100);
     setDebounceTimer(timerId);
     // eslint-disable-next-line
   }, [size.height, size.width]);
@@ -61,13 +66,15 @@ function App() {
   }, []);
 
   return (
-    <div ref={app} className="App">
-      <div ref={scrollContainer} className="scroll">
-        <Navbar />
-        <PhotoLayout />
-        <Footer />
+    <OnImagesLoaded onLoaded={resizeWindow}>
+      <div ref={app} className="App">
+        <div ref={scrollContainer} className="scroll">
+          <Navbar />
+          <PhotoLayout />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </OnImagesLoaded>
   );
 }
 

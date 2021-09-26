@@ -19,22 +19,26 @@ const PhotoLayout = () => {
   // };
 
   // const options = { threshold: 1 };
-
+  const scaleOnScroll = (elHeight, elTopOffset) => {
+    const scaleRatio =
+      (window.scrollY + window.innerHeight - elHeight * 0.3 - elTopOffset) /
+        elHeight /
+        3 +
+      1;
+    return scaleRatio > 1.3 ? 1.3 : scaleRatio < 1 ? 1 : scaleRatio;
+  };
   // const observer = new IntersectionObserver(scaleVisiblePhoto, options);
   useEffect(() => {
     // console.log(photoLayout.current.children);
     const divArray = [...photoLayout.current.children];
     window.onscroll = () => {
-      // console.log("scrolling");
+      // console.log(window.innerHeight);
       divArray.forEach((div) => {
         // console.log((window.scrollY - div.offsetTop) / div.offsetHeight / 2);
-        div.firstChild.style.transform = `scale(${
-          (window.scrollY - div.offsetTop) / div.offsetHeight + 1 > 1.5
-            ? 1.5
-            : (window.scrollY - div.offsetTop) / div.offsetHeight + 1 < 1
-            ? 1
-            : (window.scrollY - div.offsetTop) / div.offsetHeight + 1
-        })`;
+        div.firstChild.style.transform = `scale(${scaleOnScroll(
+          div.offsetHeight,
+          div.offsetTop
+        )})`;
         // div.firstChild.style.transform = `scale(${
         //   (window.scrollY - div.offsetTop) / div.offsetHeight / 2
         // })`;
