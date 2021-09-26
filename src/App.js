@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar.component";
 import PhotoLayout from "./components/PhotoLayout/PhotoLayout.component";
@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer.component";
 import useWindowSize from "./hooks/useWindowSize";
 
 function App() {
+  const [debounceTimer, setDebounceTimer] = useState();
   const size = useWindowSize();
 
   const app = useRef();
@@ -20,11 +21,19 @@ function App() {
   };
 
   useEffect(() => {
-    scrollContainer.current.children[1].onload =
+    if (debounceTimer) {
+      clearTimeout(debounceTimer);
+    }
+    const timerId = setTimeout(() => {
+      // console.log(scrollContainer.current.getBoundingClientRect().height);
+
+      // console.log("resize");
       document.body.style.height = `${
         scrollContainer.current.getBoundingClientRect().height
       }px`;
-  }, [size.height]);
+    }, 200);
+    setDebounceTimer(timerId);
+  }, [size.height, size.width]);
 
   const smoothScrolling = () => {
     scrollConfigs.current = window.scrollY;
@@ -47,7 +56,7 @@ function App() {
   useEffect(() => {
     // console.log("raf!");
     requestAnimationFrame(() => smoothScrolling());
-  });
+  }, []);
 
   return (
     <div ref={app} className="App">

@@ -6,9 +6,18 @@
   margin-bottom: 280px;
 }
 
+.image {
+  overflow: hidden;
+}
+
+.image img:hover {
+  transform: scale(1) !important;
+}
+
 .image img {
   width: 100%;
   display: block;
+  transition: all 3.5s;
 }
 
 .image1 {
