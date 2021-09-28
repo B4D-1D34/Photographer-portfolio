@@ -23,9 +23,9 @@ const PhotoLayout = () => {
     const scaleRatio =
       (window.scrollY + window.innerHeight - elHeight * 0.3 - elTopOffset) /
         elHeight /
-        3 +
+        5 +
       1;
-    return scaleRatio > 1.3 ? 1.3 : scaleRatio < 1 ? 1 : scaleRatio;
+    return scaleRatio > 1.2 ? 1.2 : scaleRatio < 1 ? 1 : scaleRatio;
   };
   // const observer = new IntersectionObserver(scaleVisiblePhoto, options);
   useEffect(() => {
