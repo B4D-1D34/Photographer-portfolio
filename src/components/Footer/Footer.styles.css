@@ -54,6 +54,7 @@
     grid-column: 23/18;
     /* autoprefixer: ignore next */
     -webkit-box-pack: flex-end;
+    /* autoprefixer: ignore next */
     -webkit-justify-content: flex-end;
     /* autoprefixer: ignore next */
     -ms-flex-pack: flex-end;
