@@ -6,62 +6,47 @@ import Footer from "./components/Footer/Footer.component";
 
 import useWindowSize from "./hooks/useWindowSize";
 import OnImagesLoaded from "react-on-images-loaded";
+import {
+  resizeWindow,
+  isMobile,
+  smoothScrollingWithConfigs,
+} from "./helperFunctions";
 
 function App() {
   const [debounceTimer, setDebounceTimer] = useState();
   const size = useWindowSize();
 
-  const app = useRef();
   const scrollContainer = useRef();
+  const [smoothScrolling, scrollConfigs] = smoothScrollingWithConfigs();
 
-  const scrollConfigs = {
-    ease: 0.1,
-    current: 0,
-    previous: 0,
-    rounded: 0,
-  };
+  const handleImagesLoaded = () => resizeWindow(scrollContainer);
 
-  const resizeWindow = () => {
-    document.body.style.height = `${
-      scrollContainer.current.getBoundingClientRect().height
-    }px`;
-  };
-
+  //window resize handling, smooth scroll necessity
   useEffect(() => {
     if (debounceTimer) {
       clearTimeout(debounceTimer);
     }
     const timerId = setTimeout(() => {
-      // console.log(scrollContainer.current.getBoundingClientRect().height);
-
-      // console.log("init height");
-      resizeWindow();
+      resizeWindow(scrollContainer);
     }, 100);
     setDebounceTimer(timerId);
     // eslint-disable-next-line
   }, [size.height, size.width]);
 
-  const smoothScrolling = () => {
-    scrollConfigs.current = window.scrollY;
-    scrollConfigs.previous +=
-      (scrollConfigs.current - scrollConfigs.previous) * scrollConfigs.ease;
-    scrollConfigs.rounded = Math.round(scrollConfigs.previous * 100) / 100;
-
-    scrollContainer.current.style.transform = `translate3d(0,-${scrollConfigs.rounded}px,0) 
-    `;
-
-    requestAnimationFrame(() => smoothScrolling());
-  };
-
+  //turning smooth scroll on, mobile is off
   useEffect(() => {
-    // console.log("raf!");
-    requestAnimationFrame(() => smoothScrolling());
+    if (isMobile()) {
+      return;
+    }
+    requestAnimationFrame(() =>
+      smoothScrolling(scrollContainer, scrollConfigs)
+    );
     // eslint-disable-next-line
   }, []);
 
   return (
-    <OnImagesLoaded onLoaded={resizeWindow}>
-      <div ref={app} className="App">
+    <OnImagesLoaded onLoaded={handleImagesLoaded}>
+      <div className="App">
         <div ref={scrollContainer} className="scroll">
           <Navbar />
           <PhotoLayout />
