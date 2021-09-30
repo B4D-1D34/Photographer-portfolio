@@ -14,9 +14,9 @@
   overflow: hidden;
 }
 
-.image img:hover {
-  /* transform: scale(1) !important; */
-}
+/* .image img:hover {
+  transform: scale(1) !important;
+} */
 
 .image img {
   width: 100%;
