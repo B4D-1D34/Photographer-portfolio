@@ -2,8 +2,12 @@
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  row-gap: 200px;
+  /* row-gap: 200px; */
   margin-bottom: 280px;
+}
+
+.PhotoLayout div:not(:last-child) {
+  margin-bottom: 200px;
 }
 
 .image {
@@ -70,16 +74,24 @@
 
 @media screen and (max-width: 960px) {
   .PhotoLayout {
-    row-gap: 160px;
+    /* row-gap: 160px; */
     margin-bottom: 220px;
+  }
+  .PhotoLayout div:not(:last-child) {
+    margin-bottom: 160px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .PhotoLayout {
-    row-gap: 120px;
+    /* row-gap: 120px; */
     margin-bottom: 180px;
   }
+
+  .PhotoLayout div:not(:last-child) {
+    margin-bottom: 120px;
+  }
+
   .image {
     grid-column: 3/23;
   }
@@ -87,9 +99,13 @@
 
 @media screen and (max-width: 360px) {
   .PhotoLayout {
-    row-gap: 80px;
+    /* row-gap: 80px; */
     margin-bottom: 120px;
     display: flex;
     flex-direction: column;
+  }
+
+  .PhotoLayout div:not(:last-child) {
+    margin-bottom: 80px;
   }
 }
