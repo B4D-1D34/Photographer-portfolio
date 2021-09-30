@@ -92,4 +92,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  @supports not (row-gap: 80px) {
+    .PhotoLayout div:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
 }
