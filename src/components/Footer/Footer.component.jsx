@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="Footer">
       <div className="FooterIcon FooterIconMail">
         <a
-          href="alekseyap@icloud.com"
+          href="mailto:alekseyap@icloud.com"
           target="_blank"
           rel="noopener noreferrer"
         >
