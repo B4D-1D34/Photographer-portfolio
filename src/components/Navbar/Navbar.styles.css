@@ -1,6 +1,6 @@
 .Navbar {
   width: 100%;
-  margin: 20px auto 100px;
+  margin: 20px auto 140px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,6 +13,10 @@
   line-height: 110%;
   font-size: 24px;
   font-weight: 700;
+}
+
+.titleThin {
+  font-weight: 400;
 }
 
 .NavbarIconsContainer {
@@ -44,25 +48,30 @@
 @media screen and (max-width: 960px) {
   .Navbar {
     grid-column: 3/23;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .Navbar {
-    margin-bottom: 60px;
+    grid-column: 2/24;
+    margin-bottom: 100px;
   }
 }
 
 @media screen and (max-width: 360px) {
+  .Navbar {
+    margin-bottom: 80px;
+  }
+
   .NavbarTitle {
     font-size: 20px;
   }
   .NavbarIconsContainer .NavbarIcon:not(:last-child) {
-    margin-right: 15px;
+    margin-right: 20px;
   }
 
-  .NavbarIconInstagram svg {
+  /* .NavbarIconInstagram svg {
     width: 24px;
     height: 24px;
   }
@@ -80,5 +89,5 @@
   .NavbarIconBehance {
     width: 30px;
     height: 30px;
-  }
+  } */
 }

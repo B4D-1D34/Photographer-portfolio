@@ -6,17 +6,10 @@ import { ReactComponent as InstagramIcon } from "./instagram.svg";
 const Navbar = () => {
   return (
     <div className="Navbar">
-      <div className="NavbarTitle">Алексей Апарин</div>
+      <div className="NavbarTitle">
+        Алексей Апарин → <span className="titleThin">фотограф</span>
+      </div>
       <div className="NavbarIconsContainer">
-        <div className="NavbarIcon NavbarIconInstagram">
-          <a
-            href="https://www.instagram.com/aleks_ap"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramIcon title="instagram link" />
-          </a>
-        </div>
         <div className="NavbarIcon NavbarIconBehance">
           <a
             href="https://www.behance.net/aleksap"
@@ -24,6 +17,15 @@ const Navbar = () => {
             rel="noopener noreferrer"
           >
             <BehanceIcon title="behance link" />
+          </a>
+        </div>
+        <div className="NavbarIcon NavbarIconInstagram">
+          <a
+            href="https://www.instagram.com/aleks_ap"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramIcon title="instagram link" />
           </a>
         </div>
       </div>

@@ -92,8 +92,11 @@
     margin-bottom: 120px;
   }
 
-  .image {
-    grid-column: 3/23;
+  .PhotoLayout .image:nth-child(odd) {
+    grid-column: 1/24;
+  }
+  .PhotoLayout .image:nth-child(even) {
+    grid-column: 2/25;
   }
 }
 
@@ -107,5 +110,11 @@
 
   .PhotoLayout div:not(:last-child) {
     margin-bottom: 80px;
+  }
+  .PhotoLayout .image:nth-child(odd) {
+    margin-left: -20px;
+  }
+  .PhotoLayout .image:nth-child(even) {
+    margin-right: -20px;
   }
 }
