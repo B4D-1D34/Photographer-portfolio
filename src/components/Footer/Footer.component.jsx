@@ -16,7 +16,7 @@ const Footer = () => {
           <MailIcon title="mail link" />
         </a>
       </div>
-      <div className="FooterIcon FooterIconBehance">
+      <div className="FooterIcon FooterIconBehance" id="behance_footer">
         <a
           href="https://www.behance.net/aleksap"
           target="_blank"
@@ -25,7 +25,7 @@ const Footer = () => {
           <BehanceIcon title="behance link" />
         </a>
       </div>
-      <div className="FooterIcon FooterIconInstagram">
+      <div className="FooterIcon FooterIconInstagram" id="instagram_footer">
         <a
           href="https://www.instagram.com/aleks_ap"
           target="_blank"

@@ -10,7 +10,7 @@ const Navbar = () => {
         Алексей Апарин → <span className="titleThin">фотограф</span>
       </div>
       <div className="NavbarIconsContainer">
-        <div className="NavbarIcon NavbarIconBehance">
+        <div className="NavbarIcon NavbarIconBehance" id="behance_navbar">
           <a
             href="https://www.behance.net/aleksap"
             target="_blank"
@@ -19,7 +19,7 @@ const Navbar = () => {
             <BehanceIcon title="behance link" />
           </a>
         </div>
-        <div className="NavbarIcon NavbarIconInstagram">
+        <div className="NavbarIcon NavbarIconInstagram" id="instagram_navbar">
           <a
             href="https://www.instagram.com/aleks_ap"
             target="_blank"

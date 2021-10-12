@@ -57,7 +57,7 @@
 }
 
 .image9 {
-  grid-column: 4/22;
+  grid-column: 1/-1;
 }
 
 .image10 {
@@ -92,6 +92,11 @@
     margin-bottom: 120px;
   }
 
+  .image6,
+  .image9 {
+    grid-column: 1/-1 !important;
+  }
+
   .PhotoLayout .image:nth-child(odd) {
     grid-column: 1/24;
   }
@@ -111,6 +116,13 @@
   .PhotoLayout div:not(:last-child) {
     margin-bottom: 80px;
   }
+
+  .image6,
+  .image9 {
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+  }
+
   .PhotoLayout .image:nth-child(odd) {
     margin-left: -20px;
   }
